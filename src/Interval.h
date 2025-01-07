@@ -12,6 +12,7 @@ public:
     [[nodiscard]] double size() const;
     [[nodiscard]] bool contains(double x) const;
     [[nodiscard]] bool surrounds(double x) const;
+    [[nodiscard]] double clamp(double x) const;
 
     static const interval empty, universe;
 };

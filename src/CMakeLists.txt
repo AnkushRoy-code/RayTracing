@@ -1,5 +1,6 @@
 add_executable(RayTracing 
     main.cpp
+    Camera.cpp
     Colour.cpp
     Hittable.cpp
     HittableList.cpp
@@ -8,6 +9,7 @@ add_executable(RayTracing
     Sphere.cpp
     Vector.cpp
 
+    Camera.h
     Colour.h
     Common.h
     Hittable.h
