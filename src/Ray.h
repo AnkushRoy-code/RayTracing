@@ -18,4 +18,4 @@ private:
     vec3 dir;
 };
 
-#endif
+#endif  // INCLUDE_SRC_RAY_H_

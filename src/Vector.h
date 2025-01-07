@@ -7,7 +7,8 @@
 class vec3
 {
 public:
-    double vec[3];
+    double element[3];  // the 3 elements of vector... i forgot what they were
+                        // originally called
 
     vec3();
     vec3(double e0, double e1, double e2);
@@ -35,27 +36,30 @@ using point3 = vec3;
 
 inline std::ostream &operator<<(std::ostream &out, const vec3 &v)
 {
-    return out << v.vec[0] << ' ' << v.vec[1] << ' ' << v.vec[2];
+    return out << v.element[0] << ' ' << v.element[1] << ' ' << v.element[2];
 }
 
 inline vec3 operator+(const vec3 &u, const vec3 &v)
 {
-    return {u.vec[0] + v.vec[0], u.vec[1] + v.vec[1], u.vec[2] + v.vec[2]};
+    return {u.element[0] + v.element[0], u.element[1] + v.element[1],
+            u.element[2] + v.element[2]};
 }
 
 inline vec3 operator-(const vec3 &u, const vec3 &v)
 {
-    return {u.vec[0] - v.vec[0], u.vec[1] - v.vec[1], u.vec[2] - v.vec[2]};
+    return {u.element[0] - v.element[0], u.element[1] - v.element[1],
+            u.element[2] - v.element[2]};
 }
 
 inline vec3 operator*(const vec3 &u, const vec3 &v)
 {
-    return {u.vec[0] * v.vec[0], u.vec[1] * v.vec[1], u.vec[2] * v.vec[2]};
+    return {u.element[0] * v.element[0], u.element[1] * v.element[1],
+            u.element[2] * v.element[2]};
 }
 
 inline vec3 operator*(double t, const vec3 &v)
 {
-    return {t * v.vec[0], t * v.vec[1], t * v.vec[2]};
+    return {t * v.element[0], t * v.element[1], t * v.element[2]};
 }
 
 inline vec3 operator*(const vec3 &v, double t)
@@ -70,14 +74,15 @@ inline vec3 operator/(const vec3 &v, double t)
 
 inline double dot(const vec3 &u, const vec3 &v)
 {
-    return u.vec[0] * v.vec[0] + u.vec[1] * v.vec[1] + u.vec[2] * v.vec[2];
+    return u.element[0] * v.element[0] + u.element[1] * v.element[1]
+           + u.element[2] * v.element[2];
 }
 
 inline vec3 cross(const vec3 &u, const vec3 &v)
 {
-    return {u.vec[1] * v.vec[2] - u.vec[2] * v.vec[1],
-                u.vec[2] * v.vec[0] - u.vec[0] * v.vec[2],
-                u.vec[0] * v.vec[1] - u.vec[1] * v.vec[0]};
+    return {u.element[1] * v.element[2] - u.element[2] * v.element[1],
+            u.element[2] * v.element[0] - u.element[0] * v.element[2],
+            u.element[0] * v.element[1] - u.element[1] * v.element[0]};
 }
 
 inline vec3 unit_vector(const vec3 &v)

@@ -1,5 +1,5 @@
-#ifndef INCLUDE_SRC_COLOUR_CPP_
-#define INCLUDE_SRC_COLOUR_CPP_
+#ifndef INCLUDE_SRC_COLOUR_H_
+#define INCLUDE_SRC_COLOUR_H_
 
 #include "Vector.h"
 
@@ -7,6 +7,6 @@
 
 using color = vec3;
 
-void write_color(std::ostream &out, const color &pixel_color);
+void writeColor(std::ostream &out, const color &pixelColor);
 
-#endif
+#endif  // INCLUDE_SRC_COLOUR_H_
